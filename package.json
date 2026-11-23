@@ -1,0 +1,37 @@
+{
+  "name": "dsh-model-params",
+  "version": "0.4.3",
+  "description": "模型列表内逐模型参数编辑面板：上下文预设（128K/256K/512K/1M）、思考开关与强度档位（默认 high），百炼端点自动兼容，卸载自动回滚全部配置写入。Per-model parameter flyout in the DSH model list: context presets, thinking toggle and reasoning levels with automatic Bailian compatibility, plus uninstall rollback of every config write.",
+  "type": "module",
+  "license": "MIT",
+  "author": "kevinhasen",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kevinhasen/dsh-model-params.git"
+  },
+  "keywords": ["deepseek", "harness", "dsh", "dsh-plugin", "model", "reasoning-effort", "context-window"],
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg"
+  },
+  "files": ["index.js", "client.js", "cordis.patch.yml", "locale/*.json", "docs", "icon.svg", "README.md", "LICENSE"],
+  "dsh": {
+    "bundle": { "patch": "./cordis.patch.yml" },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": [
+        "@deepseek-ai/dsh-client-locale",
+        "@deepseek-ai/dsh-client-ui-renderer",
+        "@deepseek-ai/dsh-client-ui-settings",
+        "@deepseek-ai/dsh-client-ui-model-selection"
+      ]
+    }
+  },
+  "engines": { "dsh": ">=0.2.2-rc.3" },
+  "dependencies": {
+    "@deepseek-ai/schemastery": "~3.19.0"
+  }
+}

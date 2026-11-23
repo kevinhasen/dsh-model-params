@@ -1,0 +1,7 @@
+{
+  "meta": {
+    "title": "Model parameter editor",
+    "description": "Adds an edit button beside each model in the model list; clicking opens a flyout panel next to the list with context presets (128K/256K/512K/1M), a thinking toggle (default on, green=on), and reasoning levels (low/medium/high/xhigh/max, default high). Bailian-style endpoints are configured automatically; every config write is journaled and rolled back on uninstall.",
+    "detail": "docs/DETAIL.md"
+  }
+}
