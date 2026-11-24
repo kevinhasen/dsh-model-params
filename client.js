@@ -196,7 +196,7 @@ window.__ModuleLoader__.load({
       const displayedEffort = isCurrent
         ? (current.reasoningEffort ?? (reasoning && reasoning.defaultEffort))
         : (reasoning && reasoning.defaultEffort);
-      const toggleOn = reasoning !== undefined ? displayedEffort !== 'off' : !explicitlyDisabled;
+      const toggleOn = reasoning !== undefined ? displayedEffort !== 'off' : false;
       const selectedLevel = reasoning !== undefined
         ? (displayedEffort !== undefined && displayedEffort !== 'off' ? displayedEffort : 'high')
         : 'high';
